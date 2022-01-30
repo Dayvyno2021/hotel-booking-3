@@ -53,7 +53,7 @@ const HomeScreen = () => {
 
 
   return (
-    <Container className='py-1 px-5 justify-content-center mx-auto m-1'>
+    <div className='py-1 mx-5 px-4 justify-content-center mx-auto m-1'>
       {loading && <Loader />}
       {error && <MessageDanger>{error} </MessageDanger>} 
       {loadingDel && <Loader />}
@@ -77,7 +77,7 @@ const HomeScreen = () => {
         <Paginate pages={pages} active={active}/>
       </Row>
       
-    </Container>
+    </div>
   )
 }
 
