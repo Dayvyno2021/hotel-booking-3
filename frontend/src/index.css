@@ -1,0 +1,92 @@
+.body1 {
+  background-color: rgba(255, 214, 153, 0.5);
+}
+
+.body {
+  min-height: 85vh;
+}
+
+.messagePosition {
+  position: fixed;
+  top: 0;
+}
+
+.avatar-dayve {
+  width: 50px;
+  height: 50px;
+  border: 2px grey solid;
+  border-radius: 50%;
+  background-color: grey;
+  color: white;
+}
+
+.locked {
+  position: relative;
+  bottom: 4px;
+  margin-right: 5px;
+}
+
+.checkLocked {
+  position: relative;
+  top: 4px;
+}
+
+.arrowing {
+  position: relative;
+  top: 6px;
+}
+
+@media screen and (max-width: 800px) {
+  h4 {
+    font-size: 15px;
+  }
+  h6 {
+    font-size: 13px;
+  }
+}
+
+.text-person {
+  position: relative;
+  bottom: 10px;
+}
+
+@media screen and (max-width: 576px) {
+  .hotel-booking {
+    display: flex;
+    justify-content: center;
+  }
+
+  .buttonBooking {
+    margin-top: 20px;
+  }
+}
+
+.addHotel {
+  font-family: 'Bakbak One', cursive;
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.loaderDayve {
+  position: fixed;
+  text-align: center;
+}
+
+.dayveCard {
+  border: 1px solid rgb(141, 132, 132);
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.cdDayve {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dayveDel {
+  cursor: pointer;
+}
+
+.icon2 {
+  color: blue;
+}
