@@ -10,6 +10,7 @@ import Connected from '../components/Connected'
 import NotConnected from '../components/NotConnected'
 import {sellerHotelsAction} from '../actions/hotelActions'
 import SmallCard from '../components/SmallCard'
+import { Link } from 'react-router-dom'
 import { protectedLoginAction } from '../actions/userActions'
 
 
@@ -65,7 +66,12 @@ const DashboardSellerScreen = () => {
         {
           !user.seller && 
           (
-            <Button>Book Hotel</Button>
+            <div className='d-flex justify-content-center py-5'>
+              <Link to='/'>
+                <Button >Book Hotel</Button>
+              </Link>
+            </div>
+              
           )
         }
          
