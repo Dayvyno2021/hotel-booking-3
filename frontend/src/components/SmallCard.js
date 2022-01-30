@@ -23,7 +23,7 @@ const SmallCard = ({hotel, deleteHotel}) => {
   return (
   <>
     <Row>
-      <Col xs={3} sm={4} md={4}>
+      <Col xs={10} sm={10} md={4} className='mx-auto'>
         {
           hotel.image && hotel.image.ContentType? 
           (
@@ -45,10 +45,10 @@ const SmallCard = ({hotel, deleteHotel}) => {
           )
         }
       </Col>
-      <Col xs={7} sm={6} md={7} className='d-flex flex-column justify-content-around'>
+      <Col xs={12} sm={12} md={7} className='d-flex flex-column justify-content-around'>
         <Link to={`/hotel/${hotel._id}`}>
           <Card.Title className="clearfix dayveCard text-primary" >
-            <span className="float-start">{hotel.title} </span>
+            <span className="float-start">{hotel.title}</span>
             <span className="float-end text-primary">	&#8358;{Number(hotel.price).toLocaleString()}.00 </span>
           </Card.Title>
         </Link>

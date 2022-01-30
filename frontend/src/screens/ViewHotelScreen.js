@@ -53,11 +53,11 @@ const ViewHotelScreen = () => {
       </Col>
     </Row>
     <Row className='m-3'>
-      <Col xs={4} md={5} >
+      <Col xs={10} md={5} className='mx-auto' >
         { h && h._id && <img src={`/api/hotel/image/${h._id}`} alt="hotel_image" 
         className='rounded img-fluid img-thumbnail' width="1100" height="500" />}
       </Col>
-      <Col xs={8} md={7}>
+      <Col xs={12} md={7}>
         <ListGroup className='rounded'>
           <ListGroup.Item className='d-flex'>
             <h3 className='text-primary'>&#8358;{h && h.price && h.price.toLocaleString()}.00 </h3>
