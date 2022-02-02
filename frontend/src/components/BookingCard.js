@@ -24,29 +24,29 @@ const BookingCard = ({h, session, orderedBy}) => {
       <Col xs={8} md={7} className='mb-3'>
         <ListGroup className='rounded'>
           <ListGroup.Item className='clearfix'>
-            <h3 className='float-start text-primary'>{h.title} </h3>
+            <h3 className='float-start text-primary'>{h && h.title} </h3>
             <div className='float-end d-flex'>
               <h3 className='text-primary'>&#8358;{h && h.price && h.price.toLocaleString()}.00 </h3>
               <span className='ms-2'>per night</span>
             </div>
           </ListGroup.Item>
           <ListGroup.Item>
-            <p>{h.content} </p>
+            <p>{h && h.content} </p>
           </ListGroup.Item>
           <ListGroup.Item>
-             <span><strong>Availability: </strong> {diffDays(h.from, h.to)} {diffDays(h.from, h.to) <= 1? "day" : "days"}</span>
+             <span><strong>Availability: </strong> {diffDays(h && h.from, h &&h.to)} {diffDays(h && h.from, h && h.to) <= 1? "day" : "days"}</span>
           </ListGroup.Item>
           <ListGroup.Item>
-            <span><strong>Location: </strong>{h.location} </span>
+            <span><strong>Location: </strong>{h && h.location} </span>
           </ListGroup.Item>
           <ListGroup.Item>
-            <span><strong>Available From: </strong>{new Date(h.from).toDateString()} {new Date(h.from).toLocaleTimeString('en-GB', {timeZone: 'UTC'})}</span>
+            <span><strong>Available From: </strong>{new Date(h && h.from).toDateString()} {new Date(h && h.from).toLocaleTimeString('en-GB', {timeZone: 'UTC'})}</span>
           </ListGroup.Item>
           <ListGroup.Item>
-            <span><strong>Available to: </strong>{new Date(h.to).toDateString()} {new Date(h.from).toLocaleTimeString('en-GB', {timeZone: 'UTC'})}</span>
+            <span><strong>Available to: </strong>{new Date(h && h.to).toDateString()} {new Date(h && h.from).toLocaleTimeString('en-GB', {timeZone: 'UTC'})}</span>
           </ListGroup.Item>
           <ListGroup.Item>
-            <span><strong>Number of beds: </strong>{h.bed} </span>
+            <span><strong>Number of beds: </strong>{h && h.bed} </span>
           </ListGroup.Item>
           {show && <UserOrderModal show={show} handleClose={handleClose} session={session} orderedBy={orderedBy} />}
     

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import {useDispatch, useSelector} from 'react-redux'
 import { allHotelsAction, deleteHotelAction } from '../actions/hotelActions';
 import Loader from '../components/Loader'
