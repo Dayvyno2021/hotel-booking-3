@@ -36,7 +36,10 @@ const admin = async(req, res, next)=>{
       res.status(400).json("Not authorized as an admin")
     }
   } catch (error) {
-    res.status(400).json("Not authorized as an admin")
+    res.status(400).json({
+      message: "Not authorized as an admin",
+      systemMessage: process.env.NODE_ENV==='production'? null : error
+    })
   }
 
 }

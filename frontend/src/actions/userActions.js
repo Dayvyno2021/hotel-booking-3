@@ -32,7 +32,7 @@ export const userRegisterAction = (user) => async(dispatch) =>{
   } catch (error) {
     dispatch({
       type: USER_REGISTER_FAIL,
-      payload: error.response.data.message && error.response ? 
+      payload: error.response && error.response.data.message ? 
       error.response.data.message : error.message
     })
   }

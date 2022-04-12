@@ -12,6 +12,7 @@ import {sellerHotelsAction} from '../actions/hotelActions'
 import SmallCard from '../components/SmallCard'
 import { Link } from 'react-router-dom'
 import { protectedLoginAction } from '../actions/userActions'
+import {deleteHotelAction } from '../actions/hotelActions';
 
 
 const DashboardSellerScreen = () => {
@@ -31,6 +32,16 @@ const DashboardSellerScreen = () => {
     dispatch(protectedLoginAction())
 
   }, [dispatch]);
+
+  const deleteHotel= (id, user) =>{
+    if (user && user.isAdmin ===true){
+      if (window.confirm("Delete hotel?")){
+        dispatch(deleteHotelAction(id))
+      }
+    } else{
+      window.alert('Only software Admins are allowed to delete hotels')
+    }
+  }
   
 
   return (   
@@ -82,7 +93,7 @@ const DashboardSellerScreen = () => {
           {
             sellerHotels && sellerHotels.map((sh)=>(
               <Col key={sh._id} xs={12} className='my-2 border border-secondary border-2 rounded p-2 cdDayve bg-light'>
-                <SmallCard hotel={sh} />
+                <SmallCard hotel={sh} deleteHotel={deleteHotel}/>
               </Col>
             ))
           }

@@ -14,11 +14,6 @@ const NotConnected = () => {
   const userLoginReducer = useSelector(state=>state.userLoginReducer)
   const {loading, user, error} = userLoginReducer
 
-  // useEffect(()=>{
-  //   if (userAccount){
-    //   }
-    // },[navigate, userAccount])
-    
     const handleClick = () => {
       dispatch(stripeAccountAction())
       navigate(`/user/stripe-account/${user._id}`)

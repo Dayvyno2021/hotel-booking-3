@@ -39,17 +39,17 @@ export const createHotel = async(req, res) =>{
 //@ access: public
 export const allHotels = async(req, res) =>{
   try {
-    const {name, bed, date} =  req.query
+    const {name, bed, date, activePage} =  req.query
 
-    const active = Number(req.query.activePage) || 1
+    const active = Number(activePage) || 1
     const pageSize = 5
-    const searchTitle = req.query.name? {
-      title : {$regex: req.query.name, $options: 'i'}
+    const searchTitle = name? {
+      title : {$regex: name, $options: 'i'}
 
     } : {}
     
-    const searchBeds = req.query.bed? {
-      bed : req.query.bed
+    const searchBeds = bed? {
+      bed : bed
     } : {}
 
 

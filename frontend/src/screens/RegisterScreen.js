@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react'
-import {useLocation, useNavigate, Link} from 'react-router-dom'
+import {useLocation, useNavigate, Link /*useParams*/} from 'react-router-dom'
 import {Form, Button, Row, Col, Container} from 'react-bootstrap'
 import {MessageDanger} from '../components/Message'
 import {useDispatch, useSelector} from 'react-redux'
@@ -9,6 +9,7 @@ import Loader from '../components/Loader'
 
 const RegisterScreen = () => {
 
+  // const params = useParams()
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -92,7 +93,7 @@ const RegisterScreen = () => {
 
             <Form.Group  className='d-flex justify-content-center'>
               <Button variant="primary" type="submit" 
-                disabled={!email || !password || !name }
+                disabled={!email || !password || !name}
               >
                 Submit
               </Button>

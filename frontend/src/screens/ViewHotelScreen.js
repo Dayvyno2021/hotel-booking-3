@@ -48,7 +48,7 @@ const ViewHotelScreen = () => {
     {loading && <Loader/>}
     {error && <MessageDanger>{error} </MessageDanger>}
     <Row>
-      <Col className='bg-secondary d-flex justify-content-center text-light addHotel py-5 '>
+      <Col className='bg-secondary d-flex justify-content-center text-light addHotel  '>
         <h1>{h.title} </h1>
       </Col>
     </Row>

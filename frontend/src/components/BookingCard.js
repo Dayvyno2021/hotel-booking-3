@@ -26,7 +26,7 @@ const BookingCard = ({h, session, orderedBy}) => {
           <ListGroup.Item className='clearfix'>
             <h3 className='float-start text-primary'>{h && h.title} </h3>
             <div className='float-end d-flex'>
-              <h3 className='text-primary'>&#8358;{h && h.price && h.price.toLocaleString()}.00 </h3>
+              <h3 className='text-primary'>&#8358;{h && h.price && h.price.toLocaleString()}</h3>
               <span className='ms-2'>per night</span>
             </div>
           </ListGroup.Item>

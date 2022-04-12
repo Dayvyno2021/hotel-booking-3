@@ -50,7 +50,7 @@ const StripePaymentScreen = () => {
             <Card.Body>
               <Card.Subtitle className="mb-2 text-muted">Get Paid by DAYVE MERN</Card.Subtitle>
               <Card.Text>DAYVE MERN partners with stripe for fast, secure payments. Fill
-                out a few details so you can getting paid
+                out a few details so you can start getting paid
               </Card.Text>
               <Form.Group className="mb-3" controlId="formBasicTelephone">
                 <Form.Label as='h6'>Telephone</Form.Label>

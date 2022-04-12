@@ -38,7 +38,7 @@ const HomeScreen = () => {
 
   const deleteHotel= (id, user) =>{
     registerLocale("en-GB", enGB);
-    if (user.isAdmin ===true){
+    if (user && user.isAdmin ===true){
       if (window.confirm("Delete hotel?")){
         dispatch(deleteHotelAction(id))
       }
@@ -67,7 +67,7 @@ const HomeScreen = () => {
       
       <Row className='my-1'>
         {hotels && hotels.map(hotel=>(
-          <Col key={hotel._id} xs={12} className='my-2 border border-secondary border-2 rounded p-2 cdDayve bg-light'>
+          <Col key={hotel && hotel._id} xs={12} className='my-2 border border-secondary border-2 rounded p-2 cdDayve bg-light'>
             <SmallCard hotel={hotel} deleteHotel={deleteHotel}/>
           </Col>
         ))}

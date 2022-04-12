@@ -22,7 +22,7 @@ const ProfileModal= ({show, handleClose}) =>{
   }
 
   const balance = () =>{
-    return user.stripe_seller.balance.toLocaleString()
+    return user && user.stripe_seller && user.stripe_seller.balance.toLocaleString()
   }
 
   return (

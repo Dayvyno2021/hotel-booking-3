@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react'
-import { useLocation, useNavigate, Link} from 'react-router-dom'
+import { useLocation, useNavigate, Link, useParams} from 'react-router-dom'
 import {Form, Button, Container, Row, Col} from 'react-bootstrap'
 import {MessageDanger} from '../components/Message'
 import {useSelector, useDispatch} from 'react-redux'
@@ -8,9 +8,11 @@ import Loader from '../components/Loader'
 
 const LoginScreen = () => {
 
+  const params = useParams()
   const navigate = useNavigate()
   const location = useLocation()
 
+  const id = params.id
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -53,12 +55,12 @@ const LoginScreen = () => {
 
             <Form.Group className="mb-3 border border-1 p-1 rounded-top" controlId="formBasicEmail">
               <Form.Label>Email: </Form.Label>
-              <Form.Control type="email" placeholder="Enter Email" onChange={(e)=>setEmail(e.target.value)} />
+              <Form.Control type="email" required placeholder="Enter Email" onChange={(e)=>setEmail(e.target.value)} />
             </Form.Group>
 
             <Form.Group className="mb-3 border border-1 p-1 rounded-top" controlId="formBasicPassword">
               <Form.Label>Password:</Form.Label>
-              <Form.Control type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} />
+              <Form.Control type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} required/>
             </Form.Group>
 
             <Form.Group  className='d-flex justify-content-center'>
@@ -67,7 +69,7 @@ const LoginScreen = () => {
               </Button>
             </Form.Group>
             <Form.Text>
-              Have account already? <Link to={`/register/?redirect=${redirect}`}>Register</Link>
+              Have account already? <Link to={id? `/register/${id}/?redirect=${redirect}` : `/register/?redirect=${redirect}`}>Register</Link>
             </Form.Text>
             {<p className="text-danger">{notify}</p>}
           </Form>

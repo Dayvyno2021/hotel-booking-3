@@ -1,7 +1,7 @@
 import {admin, protect} from '../middleware/authMiddleware.js'
 import formidableMiddleware from 'express-formidable'
-const router = express.Router()
 import express from 'express'
+const router = express.Router()
 import { 
   allHotels, 
   createHotel, 

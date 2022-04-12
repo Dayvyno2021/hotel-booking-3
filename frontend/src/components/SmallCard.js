@@ -90,7 +90,7 @@ const SmallCard = ({hotel, deleteHotel}) => {
          </Link>
         </div>   
       </Col>
-      {( (user && user._id === hotel.postedBy._id) || (user && user.isAdmin===true)) &&
+      {( (user && user._id === (hotel && hotel.postedBy && hotel.postedBy._id)) || (user && user.isAdmin===true)) &&
         (
         <Col xs={2} sm={2} md={1} className='d-flex flex-column text-center justify-content-around' >
           <Link to={`/hotel/edit/${hotel._id}`}>
